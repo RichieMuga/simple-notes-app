@@ -1,0 +1,17 @@
+{% block content %}
+<div class="registration-container">
+  <h2>Register</h2>
+  <p>
+    Welcome to our platform! Please fill out the form below to create an
+    account.
+  </p>
+
+  <form method="post">
+    {% csrf_token %}
+    <div>{{ form.as_p }}</div>
+    <button type="submit">Register</button>
+  </form>
+
+  <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+</div>
+{% endblock %}
